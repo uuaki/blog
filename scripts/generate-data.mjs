@@ -127,9 +127,7 @@ function inferTagFromPath(filePath, contentDir) {
       'juanzhi': '卷帙',
       'zhaji': '杂记',
       'shiyi': '拾遗',
-      'mohen': '墨痕',
-      'qilu': '奇录',
-      'yiyu': '逸语',
+      'tags': '标签',
       'frontend': '前端',
       'backend': '后端',
     }

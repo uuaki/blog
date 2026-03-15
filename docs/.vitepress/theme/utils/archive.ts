@@ -1,5 +1,5 @@
 // 此文件由脚本自动生成，请勿手动修改
-// 生成时间：2026/1/14 13:18:55
+// 生成时间：2026/3/13 14:39:11
 import { TAGS_DATA } from "./tags";
 
 export interface ArchiveArticle {
@@ -88,8 +88,97 @@ function getIconColorForTag(tag: string): string {
 export const ARCHIVE_DATA: YearArchive[] = [
   {
     "year": "2026",
-    "count": 8,
+    "count": 10,
     "articles": [
+      {
+        "title": "第01章_C语言入门",
+        "path": "/content/zhaji/backend/c/",
+        "date": "2026-03-13",
+        "tags": [
+          "C语言",
+          "学习笔记"
+        ],
+        "desc": "- **人类语言**：是人与人之间用于沟通的一种方式。例如：中国人与中国人用普通话沟通。而中国人要和英国人交流，可以使用普通话或英语。",
+        "icon": "C",
+        "iconColor": "#555ab9"
+      },
+      {
+        "title": "后端技术",
+        "path": "/content/zhaji/backend/",
+        "date": "2026-03-13",
+        "tags": [
+          "杂记"
+        ],
+        "desc": "后端技术是指服务器端的开发技术，包括编程语言、框架、数据库等。",
+        "icon": "杂",
+        "iconColor": "#f59e0b"
+      },
+      {
+        "title": "设计模式",
+        "path": "/content/zhaji/design-patterns/",
+        "date": "2026-03-13",
+        "tags": [
+          "杂记"
+        ],
+        "desc": "设计模式是解决软件设计中常见问题的可复用方案。",
+        "icon": "杂",
+        "iconColor": "#f59e0b"
+      },
+      {
+        "title": "文档搭建",
+        "path": "/content/zhaji/doc-build/",
+        "date": "2026-03-13",
+        "tags": [
+          "杂记"
+        ],
+        "desc": "本部分记录了如何使用 VitePress 搭建和配置文档网站。",
+        "icon": "杂",
+        "iconColor": "#f59e0b"
+      },
+      {
+        "title": "JavaScript 学习笔记",
+        "path": "/content/zhaji/frontend/JavaScript/",
+        "date": "2026-03-13",
+        "tags": [
+          "杂记"
+        ],
+        "desc": "",
+        "icon": "杂",
+        "iconColor": "#f59e0b"
+      },
+      {
+        "title": "1. HTML",
+        "path": "/content/zhaji/frontend/",
+        "date": "2026-03-13",
+        "tags": [
+          "杂记"
+        ],
+        "desc": "",
+        "icon": "杂",
+        "iconColor": "#f59e0b"
+      },
+      {
+        "title": "css3 动画有哪些？",
+        "path": "/content/zhaji/interview/css/animation.md",
+        "date": "2026-03-13",
+        "tags": [
+          "杂记"
+        ],
+        "desc": "CSS 动画（CSS Animations）是为层叠样式表建议的允许可扩展标记语言（XML）元素使用 CSS 的动画的模块",
+        "icon": "杂",
+        "iconColor": "#f59e0b"
+      },
+      {
+        "title": "1. Vue3 设计思想",
+        "path": "/content/zhaji/vue/1.md",
+        "date": "2026-03-13",
+        "tags": [
+          "杂记"
+        ],
+        "desc": "> Vue3 是声明式的框架，用起来简单。",
+        "icon": "杂",
+        "iconColor": "#f59e0b"
+      },
       {
         "title": "Vscode 常用插件推荐",
         "path": "/content/shiyi/vscoe-plugin.md",
@@ -102,51 +191,6 @@ export const ARCHIVE_DATA: YearArchive[] = [
         "iconColor": "#6b7280"
       },
       {
-        "title": "第01章_C语言入门",
-        "path": "/content/zhaji/backend/c/",
-        "date": "2026-01-14",
-        "tags": [
-          "C语言",
-          "学习笔记"
-        ],
-        "desc": "- **人类语言**：是人与人之间用于沟通的一种方式。例如：中国人与中国人用普通话沟通。而中国人要和英国人交流，可以使用普通话或英语。",
-        "icon": "C",
-        "iconColor": "#555ab9"
-      },
-      {
-        "title": "后端技术",
-        "path": "/content/zhaji/backend/",
-        "date": "2026-01-14",
-        "tags": [
-          "杂记"
-        ],
-        "desc": "后端技术是指服务器端的开发技术，包括编程语言、框架、数据库等。",
-        "icon": "杂",
-        "iconColor": "#f59e0b"
-      },
-      {
-        "title": "设计模式",
-        "path": "/content/zhaji/design-patterns/",
-        "date": "2026-01-14",
-        "tags": [
-          "杂记"
-        ],
-        "desc": "设计模式是解决软件设计中常见问题的可复用方案。",
-        "icon": "杂",
-        "iconColor": "#f59e0b"
-      },
-      {
-        "title": "文档搭建",
-        "path": "/content/zhaji/doc-build/",
-        "date": "2026-01-14",
-        "tags": [
-          "杂记"
-        ],
-        "desc": "本部分记录了如何使用 VitePress 搭建和配置文档网站。",
-        "icon": "杂",
-        "iconColor": "#f59e0b"
-      },
-      {
         "title": "CSS学习笔记_进阶",
         "path": "/content/zhaji/frontend/CSS-advanced/",
         "date": "2026-01-14",
@@ -157,28 +201,6 @@ export const ARCHIVE_DATA: YearArchive[] = [
         "desc": "CSS学习笔记_进阶。",
         "icon": "C3",
         "iconColor": "#264de4"
-      },
-      {
-        "title": "JavaScript 学习笔记",
-        "path": "/content/zhaji/frontend/JavaScript/",
-        "date": "2026-01-14",
-        "tags": [
-          "杂记"
-        ],
-        "desc": "",
-        "icon": "杂",
-        "iconColor": "#f59e0b"
-      },
-      {
-        "title": "1. HTML",
-        "path": "/content/zhaji/frontend/",
-        "date": "2026-01-14",
-        "tags": [
-          "杂记"
-        ],
-        "desc": "",
-        "icon": "杂",
-        "iconColor": "#f59e0b"
       }
     ]
   },

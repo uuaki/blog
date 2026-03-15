@@ -11,8 +11,8 @@ hero:
   tagline: "天地一浮云，此身乃毫末，自勉之"
 
 features:
-  - title: 保持好奇
-    details: 人们常说：好奇心害死猫，但好消息是你不是猫。
+  - title: 好奇
+    details: 保持对世界的好奇心
   - title: 写作
     details: 写作是最好的学习方式
   - title: 编码

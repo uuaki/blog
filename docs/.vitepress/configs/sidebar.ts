@@ -17,7 +17,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
     },
     {
       text: '进阶',
-      items: [],
+      items: [{ text: '手写Vue源码', link: '/content/zhaji/vue/' }],
     },
   ],
 
@@ -91,6 +91,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
         { text: '后端', link: '/content/zhaji/backend/' },
         { text: '设计模式', link: '/content/zhaji/design-patterns/' },
         { text: '文档搭建', link: '/content/zhaji/doc-build/' },
+        { text: '手写Vue源码', link: '/content/zhaji/vue/' },
       ],
     },
   ],
