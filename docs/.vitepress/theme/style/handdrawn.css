@@ -1,0 +1,572 @@
+/* ============================================================
+   手绘风格主题 / Hand-drawn Style Theme
+   ============================================================ */
+
+/* ----- Google Fonts 手写字体 ----- */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Ma+Shan+Zheng&display=swap');
+
+/* ----- SVG 滤镜：让边框产生手绘粗糙感 ----- */
+/* 通过隐藏 SVG 定义可复用的 filter */
+.handdrawn-svg-filters {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* ============================================================
+   CSS 变量 — 手绘色彩体系（浅色/纸张模式）
+   ============================================================ */
+:root {
+  /* 纸张底色 */
+  --hd-paper-bg: #faf8f1;
+  --hd-paper-bg-2: #f5f0e4;
+
+  /* 墨水色系 */
+  --hd-ink-dark: #2c2825;
+  --hd-ink-mid: #4a453f;
+  --hd-ink-light: #7a6f63;
+
+  /* 品牌色：深蓝墨水 */
+  --hd-brand: #2a4d8f;
+  --hd-brand-light: #3d6abf;
+  --hd-brand-soft: rgba(42, 77, 143, 0.12);
+
+  /* 装饰色 */
+  --hd-warm-red: #c0392b;
+  --hd-warm-green: #27804a;
+  --hd-warm-yellow: #d4a017;
+
+  /* 手绘线条色 */
+  --hd-border: #c8bfae;
+  --hd-border-dark: #9e9080;
+
+  /* 字体 */
+  --hd-font-body: 'Ma Shan Zheng', 'KaiTi', 'STKaiti', cursive, serif;
+  --hd-font-en: 'Caveat', cursive;
+  --hd-font-mono: 'Courier New', 'Consolas', monospace;
+
+  /* 笔触宽度 */
+  --hd-stroke: 2px;
+  --hd-stroke-thick: 3px;
+}
+
+/* ============================================================
+   深色模式：夜间笔记本风格（深色纸张 + 白色墨水）
+   ============================================================ */
+.dark {
+  --hd-paper-bg: #1e1c18;
+  --hd-paper-bg-2: #252219;
+  --hd-ink-dark: #e8e0ce;
+  --hd-ink-mid: #c8bfae;
+  --hd-ink-light: #9e9080;
+  --hd-brand: #6b9fe0;
+  --hd-brand-light: #8ab8f5;
+  --hd-brand-soft: rgba(107, 159, 224, 0.15);
+  --hd-border: #4a4438;
+  --hd-border-dark: #6a5e50;
+}
+
+/* ============================================================
+   全局基础：纸张背景 + 全局字体
+   ============================================================ */
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  font-family: var(--hd-font-body) !important;
+  background-color: var(--hd-paper-bg);
+  /* 纸张噪点纹理（使用 CSS 渐变模拟纤维感） */
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* ============================================================
+   VitePress 颜色变量覆盖 — 手绘色系
+   ============================================================ */
+:root {
+  --vp-c-bg: var(--hd-paper-bg);
+  --vp-c-bg-soft: var(--hd-paper-bg-2);
+  --vp-c-bg-elv: var(--hd-paper-bg-2);
+  --vp-c-brand-1: var(--hd-brand);
+  --vp-c-brand-2: var(--hd-brand-light);
+  --vp-c-brand-3: var(--hd-brand-light);
+  --vp-c-brand-soft: var(--hd-brand-soft);
+  --vp-c-text-1: var(--hd-ink-dark);
+  --vp-c-text-2: var(--hd-ink-mid);
+  --vp-c-text-3: var(--hd-ink-light);
+  --vp-c-divider: var(--hd-border);
+  --vp-c-gutter: var(--hd-border);
+}
+
+.dark {
+  --vp-c-bg: var(--hd-paper-bg);
+  --vp-c-bg-soft: var(--hd-paper-bg-2);
+  --vp-c-bg-elv: var(--hd-paper-bg-2);
+  --vp-c-brand-1: var(--hd-brand);
+  --vp-c-brand-2: var(--hd-brand-light);
+  --vp-c-brand-3: var(--hd-brand-light);
+  --vp-c-brand-soft: var(--hd-brand-soft);
+  --vp-c-text-1: var(--hd-ink-dark);
+  --vp-c-text-2: var(--hd-ink-mid);
+  --vp-c-text-3: var(--hd-ink-light);
+  --vp-c-divider: var(--hd-border);
+}
+
+/* ============================================================
+   字体全局应用
+   ============================================================ */
+
+/* 正文：手写中文体 */
+.vp-doc p,
+.vp-doc li,
+.vp-doc td,
+.vp-doc th,
+.VPNavBar,
+.VPSidebar,
+.VPLocalNav {
+  font-family: var(--hd-font-body) !important;
+  letter-spacing: 0.02em;
+}
+
+/* 标题：更显眼的手写感 */
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.vp-doc h4,
+.vp-doc h5,
+.vp-doc h6 {
+  font-family: var(--hd-font-body) !important;
+  letter-spacing: 0.04em;
+}
+
+/* 英文/数字内容使用草书 */
+.VPHero .name,
+.VPHero .tagline,
+.VPHero .text {
+  font-family: var(--hd-font-en) !important;
+}
+
+/* 代码块使用等宽字体，不改字体但改视觉 */
+.vp-doc code,
+.vp-doc pre,
+code,
+pre {
+  font-family: var(--hd-font-mono) !important;
+}
+
+/* ============================================================
+   手绘边框 — 通用 Mixin 效果
+   使用 border-radius 随机值 + box-shadow 笔触感
+   ============================================================ */
+
+/* 手绘边框基础类（可复用） */
+.hd-border {
+  border: var(--hd-stroke) solid var(--hd-border-dark) !important;
+  border-radius: 2px 6px 3px 5px / 5px 3px 6px 2px !important;
+  box-shadow:
+    2px 3px 0 -1px var(--hd-border),
+    3px 5px 0 -2px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================================
+   标题装饰 — 手绘下划线效果
+   ============================================================ */
+
+.vp-doc h2 {
+  border-bottom: none !important;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.vp-doc h2::after {
+  content: '';
+  display: block;
+  height: var(--hd-stroke-thick);
+  margin-top: 6px;
+  background: var(--hd-ink-mid);
+  border-radius: 50% 40% 60% 30%;
+  /* 模拟手绘不均匀的划线 */
+  transform: scaleX(1) rotate(-0.3deg);
+  transform-origin: left;
+}
+
+.vp-doc h3 {
+  position: relative;
+  padding-left: 12px;
+}
+
+.vp-doc h3::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10%;
+  height: 80%;
+  width: var(--hd-stroke-thick);
+  background: var(--hd-brand);
+  border-radius: 50% 40% 60% 30% / 30% 60% 40% 50%;
+  transform: rotate(-1deg);
+}
+
+/* ============================================================
+   导航栏手绘风格
+   ============================================================ */
+
+.VPNavBar {
+  background-color: var(--hd-paper-bg) !important;
+  border-bottom: var(--hd-stroke) solid var(--hd-border) !important;
+}
+
+/* Nav 标题/logo 区域 */
+.VPNavBarTitle .title {
+  font-family: var(--hd-font-body) !important;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* Nav 链接项 */
+.VPNavBarMenu .VPNavBarMenuLink,
+.VPNavBarMenu .VPNavBarMenuGroup .button {
+  font-family: var(--hd-font-body) !important;
+  position: relative;
+}
+
+/* Nav hover 手绘下划线动画 */
+.VPNavBarMenu .VPNavBarMenuLink::after,
+.VPNavBarMenu .VPNavBarMenuGroup .button::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--hd-brand);
+  border-radius: 50%;
+  transition: width 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transform: rotate(-0.5deg);
+}
+
+.VPNavBarMenu .VPNavBarMenuLink:hover::after,
+.VPNavBarMenu .VPNavBarMenuGroup .button:hover::after,
+.VPNavBarMenu .VPNavBarMenuLink.active::after {
+  width: 100%;
+}
+
+/* ============================================================
+   侧边栏手绘风格
+   ============================================================ */
+
+.VPSidebar {
+  background-color: var(--hd-paper-bg-2) !important;
+  border-right: var(--hd-stroke) dashed var(--hd-border) !important;
+}
+
+.VPSidebarItem .text {
+  font-family: var(--hd-font-body) !important;
+}
+
+/* 侧边栏激活项 */
+.VPSidebarItem.is-active > .item .link .text,
+.VPSidebarItem.is-active > .item > .link .text {
+  color: var(--hd-brand) !important;
+  font-weight: 700;
+  position: relative;
+}
+
+/* ============================================================
+   链接 — 手绘下划线动画
+   ============================================================ */
+
+.vp-doc a:not(.header-anchor) {
+  color: var(--hd-brand);
+  text-decoration: none;
+  position: relative;
+  display: inline;
+  background-image: linear-gradient(var(--hd-brand), var(--hd-brand));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1.5px;
+  transition: background-size 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.vp-doc a:not(.header-anchor):hover {
+  background-size: 100% 1.5px;
+}
+
+/* ============================================================
+   代码块 — 手绘便签风格
+   ============================================================ */
+
+.vp-doc div[class*='language-'] {
+  border: var(--hd-stroke) solid var(--hd-border-dark) !important;
+  border-radius: 3px 8px 4px 7px / 7px 4px 8px 3px !important;
+  box-shadow:
+    3px 4px 0 -1px var(--hd-border),
+    5px 7px 0 -3px rgba(0, 0, 0, 0.07) !important;
+  background-color: var(--hd-paper-bg-2) !important;
+  position: relative;
+}
+
+/* 代码块顶部的"钉孔"装饰 */
+.vp-doc div[class*='language-']::before {
+  content: '✏️';
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 14px;
+  opacity: 0.5;
+  z-index: 2;
+}
+
+/* 行内代码 */
+.vp-doc :not(pre) > code {
+  background-color: var(--hd-brand-soft) !important;
+  border: 1px solid var(--hd-border) !important;
+  border-radius: 3px 6px 3px 6px !important;
+  color: var(--hd-brand) !important;
+  font-size: 0.9em;
+  padding: 1px 6px !important;
+}
+
+/* ============================================================
+   表格 — 手绘不规则线条
+   ============================================================ */
+
+.vp-doc table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  border: var(--hd-stroke) solid var(--hd-border-dark) !important;
+  border-radius: 3px 7px 4px 6px / 6px 4px 7px 3px !important;
+}
+
+.vp-doc th {
+  background-color: var(--hd-paper-bg-2) !important;
+  border-bottom: var(--hd-stroke) solid var(--hd-border-dark) !important;
+  font-family: var(--hd-font-body) !important;
+  font-weight: 700;
+}
+
+.vp-doc td,
+.vp-doc th {
+  border-right: 1px dashed var(--hd-border) !important;
+}
+
+.vp-doc td:last-child,
+.vp-doc th:last-child {
+  border-right: none !important;
+}
+
+.vp-doc tr:nth-child(even) td {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* ============================================================
+   自定义块（tip/warning/danger）— 手绘便签风格
+   ============================================================ */
+
+.custom-block {
+  border-width: var(--hd-stroke) !important;
+  border-style: solid !important;
+  border-radius: 3px 9px 4px 8px / 8px 4px 9px 3px !important;
+  box-shadow:
+    3px 4px 0 -1px var(--hd-border),
+    5px 7px 0 -3px rgba(0, 0, 0, 0.06) !important;
+  position: relative;
+}
+
+/* 左侧手绘竖线装饰 */
+.custom-block::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 8px;
+  bottom: 8px;
+  width: var(--hd-stroke-thick);
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.3;
+  transform: rotate(-0.5deg);
+}
+
+/* ============================================================
+   首页 Hero — 手绘标题感
+   ============================================================ */
+
+.VPHero .name {
+  font-family: var(--hd-font-body) !important;
+  letter-spacing: 0.08em;
+}
+
+.VPHero .tagline {
+  font-family: var(--hd-font-body) !important;
+  opacity: 0.75;
+}
+
+/* Hero 渐变色改为手绘色系 */
+:root {
+  --vp-home-hero-name-background: linear-gradient(
+    120deg,
+    var(--hd-brand) 20%,
+    var(--hd-warm-green) 80%
+  );
+}
+
+/* Hero 背景光晕：暖色调 */
+:root {
+  --vp-home-hero-image-background-image: radial-gradient(
+    ellipse at center,
+    rgba(42, 77, 143, 0.25) 0%,
+    rgba(212, 160, 23, 0.15) 60%,
+    transparent 80%
+  );
+}
+
+/* ============================================================
+   Feature 卡片 — 手绘卡片感 + 轻微倾斜
+   ============================================================ */
+
+.VPFeature {
+  border: var(--hd-stroke) solid var(--hd-border-dark) !important;
+  border-radius: 4px 12px 5px 11px / 11px 5px 12px 4px !important;
+  box-shadow:
+    3px 5px 0 -1px var(--hd-border),
+    6px 9px 0 -3px rgba(0, 0, 0, 0.06) !important;
+  background-color: var(--hd-paper-bg-2) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.VPFeature:nth-child(3n+1) { transform: rotate(-0.5deg); }
+.VPFeature:nth-child(3n+2) { transform: rotate(0.3deg); }
+.VPFeature:nth-child(3n+3) { transform: rotate(-0.2deg); }
+
+.VPFeature:hover {
+  transform: translateY(-4px) rotate(0deg) !important;
+  box-shadow:
+    4px 8px 0 -1px var(--hd-border),
+    8px 14px 0 -3px rgba(0, 0, 0, 0.08) !important;
+}
+
+.VPFeature .title {
+  font-family: var(--hd-font-body) !important;
+  font-weight: 700;
+}
+
+.VPFeature .details {
+  font-family: var(--hd-font-body) !important;
+}
+
+/* ============================================================
+   按钮 — 手绘感
+   ============================================================ */
+
+.VPButton {
+  font-family: var(--hd-font-body) !important;
+  border-radius: 3px 8px 4px 7px / 7px 4px 8px 3px !important;
+  border-width: var(--hd-stroke) !important;
+  box-shadow:
+    2px 3px 0 -1px rgba(0, 0, 0, 0.15),
+    4px 5px 0 -2px rgba(0, 0, 0, 0.08) !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.VPButton:hover {
+  transform: translate(-1px, -2px) !important;
+  box-shadow:
+    3px 5px 0 -1px rgba(0, 0, 0, 0.18),
+    6px 8px 0 -2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.VPButton:active {
+  transform: translate(1px, 1px) !important;
+  box-shadow: none !important;
+}
+
+/* ============================================================
+   分页线 — 手绘波浪分割线
+   ============================================================ */
+
+.vp-doc hr {
+  border: none !important;
+  height: var(--hd-stroke);
+  background: var(--hd-border);
+  border-radius: 50%;
+  transform: rotate(-0.3deg);
+  margin: 2em 0;
+  position: relative;
+}
+
+/* ============================================================
+   引用块 — 手绘便条
+   ============================================================ */
+
+.vp-doc blockquote {
+  border-left: var(--hd-stroke-thick) solid var(--hd-border-dark) !important;
+  border-radius: 0 4px 4px 0 !important;
+  background-color: var(--hd-paper-bg-2) !important;
+  position: relative;
+  transform: rotate(-0.2deg);
+  box-shadow: 2px 3px 0 -1px var(--hd-border);
+}
+
+.vp-doc blockquote::before {
+  content: '"';
+  position: absolute;
+  top: -8px;
+  left: 8px;
+  font-size: 48px;
+  color: var(--hd-border);
+  font-family: serif;
+  line-height: 1;
+  opacity: 0.6;
+}
+
+/* ============================================================
+   搜索框 — 手绘感
+   ============================================================ */
+
+.VPNavBarSearch .DocSearch-Button {
+  border-radius: 3px 8px 4px 7px !important;
+  border: 1px solid var(--hd-border) !important;
+  font-family: var(--hd-font-body) !important;
+}
+
+/* ============================================================
+   页脚
+   ============================================================ */
+
+.VPFooter {
+  border-top: var(--hd-stroke) dashed var(--hd-border) !important;
+  background-color: var(--hd-paper-bg-2) !important;
+  font-family: var(--hd-font-body) !important;
+}
+
+/* ============================================================
+   滚动条 — 手绘风格（轻量）
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--hd-border-dark);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--hd-paper-bg-2);
+}
+
+/* ============================================================
+   文字选中颜色
+   ============================================================ */
+
+::selection {
+  background-color: rgba(42, 77, 143, 0.2);
+  color: var(--hd-ink-dark);
+}

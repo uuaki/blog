@@ -1,5 +1,5 @@
 // 此文件由脚本自动生成，请勿手动修改
-// 生成时间：2026/3/13 14:39:11
+// 生成时间：2026/4/23 17:13:40
 import { TAGS_DATA } from "./tags";
 
 export interface ArchiveArticle {
@@ -88,12 +88,12 @@ function getIconColorForTag(tag: string): string {
 export const ARCHIVE_DATA: YearArchive[] = [
   {
     "year": "2026",
-    "count": 10,
+    "count": 12,
     "articles": [
       {
         "title": "第01章_C语言入门",
-        "path": "/content/zhaji/backend/c/",
-        "date": "2026-03-13",
+        "path": "/content/biji/backend/c/",
+        "date": "2026-04-23",
         "tags": [
           "C语言",
           "学习笔记"
@@ -104,80 +104,114 @@ export const ARCHIVE_DATA: YearArchive[] = [
       },
       {
         "title": "后端技术",
-        "path": "/content/zhaji/backend/",
-        "date": "2026-03-13",
+        "path": "/content/biji/backend/",
+        "date": "2026-04-23",
         "tags": [
-          "杂记"
+          "biji"
         ],
         "desc": "后端技术是指服务器端的开发技术，包括编程语言、框架、数据库等。",
-        "icon": "杂",
-        "iconColor": "#f59e0b"
+        "icon": "bi",
+        "iconColor": "#6b7280"
       },
       {
         "title": "设计模式",
-        "path": "/content/zhaji/design-patterns/",
-        "date": "2026-03-13",
+        "path": "/content/biji/design-patterns/",
+        "date": "2026-04-23",
         "tags": [
-          "杂记"
+          "biji"
         ],
         "desc": "设计模式是解决软件设计中常见问题的可复用方案。",
-        "icon": "杂",
-        "iconColor": "#f59e0b"
+        "icon": "bi",
+        "iconColor": "#6b7280"
       },
       {
         "title": "文档搭建",
-        "path": "/content/zhaji/doc-build/",
-        "date": "2026-03-13",
+        "path": "/content/biji/doc-build/",
+        "date": "2026-04-23",
         "tags": [
-          "杂记"
+          "biji"
         ],
         "desc": "本部分记录了如何使用 VitePress 搭建和配置文档网站。",
-        "icon": "杂",
-        "iconColor": "#f59e0b"
+        "icon": "bi",
+        "iconColor": "#6b7280"
       },
       {
         "title": "JavaScript 学习笔记",
-        "path": "/content/zhaji/frontend/JavaScript/",
-        "date": "2026-03-13",
+        "path": "/content/biji/frontend/JavaScript/",
+        "date": "2026-04-23",
         "tags": [
-          "杂记"
+          "biji"
         ],
         "desc": "",
-        "icon": "杂",
-        "iconColor": "#f59e0b"
+        "icon": "bi",
+        "iconColor": "#6b7280"
       },
       {
         "title": "1. HTML",
-        "path": "/content/zhaji/frontend/",
-        "date": "2026-03-13",
+        "path": "/content/biji/frontend/",
+        "date": "2026-04-23",
         "tags": [
-          "杂记"
+          "biji"
         ],
         "desc": "",
-        "icon": "杂",
-        "iconColor": "#f59e0b"
+        "icon": "bi",
+        "iconColor": "#6b7280"
       },
       {
         "title": "css3 动画有哪些？",
-        "path": "/content/zhaji/interview/css/animation.md",
-        "date": "2026-03-13",
+        "path": "/content/biji/interview/css/animation.md",
+        "date": "2026-04-23",
         "tags": [
-          "杂记"
+          "biji"
         ],
         "desc": "CSS 动画（CSS Animations）是为层叠样式表建议的允许可扩展标记语言（XML）元素使用 CSS 的动画的模块",
-        "icon": "杂",
-        "iconColor": "#f59e0b"
+        "icon": "bi",
+        "iconColor": "#6b7280"
+      },
+      {
+        "title": "css 中，有哪些方式可以隐藏页面元素？区别?",
+        "path": "/content/biji/interview/css/hide_attributes.md",
+        "date": "2026-04-23",
+        "tags": [
+          "biji"
+        ],
+        "desc": "在平常的样式排版中，我们经常遇到将某个模块隐藏的场景",
+        "icon": "bi",
+        "iconColor": "#6b7280"
+      },
+      {
+        "title": "css 选择器有哪些？优先级？哪些属性可以继承？",
+        "path": "/content/biji/interview/css/selector.md",
+        "date": "2026-04-23",
+        "tags": [
+          "biji"
+        ],
+        "desc": "CSS 选择器是 CSS 规则的第一部分",
+        "icon": "bi",
+        "iconColor": "#6b7280"
       },
       {
         "title": "1. Vue3 设计思想",
-        "path": "/content/zhaji/vue/1.md",
-        "date": "2026-03-13",
+        "path": "/content/biji/vue/1.md",
+        "date": "2026-04-23",
         "tags": [
-          "杂记"
+          "biji"
         ],
         "desc": "> Vue3 是声明式的框架，用起来简单。",
-        "icon": "杂",
-        "iconColor": "#f59e0b"
+        "icon": "bi",
+        "iconColor": "#6b7280"
+      },
+      {
+        "title": "CSS学习笔记_进阶",
+        "path": "/content/biji/frontend/CSS-advanced/",
+        "date": "2026-01-14",
+        "tags": [
+          "CSS",
+          "学习笔记"
+        ],
+        "desc": "CSS学习笔记_进阶。",
+        "icon": "C3",
+        "iconColor": "#264de4"
       },
       {
         "title": "Vscode 常用插件推荐",
@@ -189,18 +223,6 @@ export const ARCHIVE_DATA: YearArchive[] = [
         "desc": "推荐一些常用的 Vscode 插件，提高开发效率。",
         "icon": "Vs",
         "iconColor": "#6b7280"
-      },
-      {
-        "title": "CSS学习笔记_进阶",
-        "path": "/content/zhaji/frontend/CSS-advanced/",
-        "date": "2026-01-14",
-        "tags": [
-          "CSS",
-          "学习笔记"
-        ],
-        "desc": "CSS学习笔记_进阶。",
-        "icon": "C3",
-        "iconColor": "#264de4"
       }
     ]
   },
@@ -223,7 +245,7 @@ export const ARCHIVE_DATA: YearArchive[] = [
       },
       {
         "title": "HTML学习笔记",
-        "path": "/content/zhaji/frontend/html/",
+        "path": "/content/biji/frontend/html/",
         "date": "2025-12-11",
         "tags": [
           "HTML",
@@ -235,7 +257,7 @@ export const ARCHIVE_DATA: YearArchive[] = [
       },
       {
         "title": "HTML学习笔记_进阶",
-        "path": "/content/zhaji/frontend/html-advanced/",
+        "path": "/content/biji/frontend/html-advanced/",
         "date": "2025-12-11",
         "tags": [
           "HTML",
@@ -247,7 +269,7 @@ export const ARCHIVE_DATA: YearArchive[] = [
       },
       {
         "title": "第02章_变量与进制",
-        "path": "/content/zhaji/backend/c/第02章_变量与进制.md",
+        "path": "/content/biji/backend/c/第02章_变量与进制.md",
         "date": "2025-01-14",
         "tags": [
           "C语言",
@@ -259,7 +281,7 @@ export const ARCHIVE_DATA: YearArchive[] = [
       },
       {
         "title": "第03章_运算符与流程控制",
-        "path": "/content/zhaji/backend/c/第03章_运算符与流程控制.md",
+        "path": "/content/biji/backend/c/第03章_运算符与流程控制.md",
         "date": "2025-01-14",
         "tags": [
           "C语言",
@@ -271,7 +293,7 @@ export const ARCHIVE_DATA: YearArchive[] = [
       },
       {
         "title": "第05章_指针",
-        "path": "/content/zhaji/backend/c/第05章_指针(重点).md",
+        "path": "/content/biji/backend/c/第05章_指针(重点).md",
         "date": "2025-01-14",
         "tags": [
           "C语言",
@@ -283,7 +305,7 @@ export const ARCHIVE_DATA: YearArchive[] = [
       },
       {
         "title": "第06章_函数",
-        "path": "/content/zhaji/backend/c/第06章_函数.md",
+        "path": "/content/biji/backend/c/第06章_函数.md",
         "date": "2025-01-14",
         "tags": [
           "C语言",
@@ -295,7 +317,7 @@ export const ARCHIVE_DATA: YearArchive[] = [
       },
       {
         "title": "第07章_结构体与共用体",
-        "path": "/content/zhaji/backend/c/第07章_结构体与共用体.md",
+        "path": "/content/biji/backend/c/第07章_结构体与共用体.md",
         "date": "2025-01-14",
         "tags": [
           "C语言",
@@ -307,7 +329,7 @@ export const ARCHIVE_DATA: YearArchive[] = [
       },
       {
         "title": "第08章_C语言常用函数",
-        "path": "/content/zhaji/backend/c/第08章_C语言常用函数.md",
+        "path": "/content/biji/backend/c/第08章_C语言常用函数.md",
         "date": "2025-01-14",
         "tags": [
           "C语言",
@@ -319,7 +341,7 @@ export const ARCHIVE_DATA: YearArchive[] = [
       },
       {
         "title": "第09章_文件操作",
-        "path": "/content/zhaji/backend/c/第09章_文件操作.md",
+        "path": "/content/biji/backend/c/第09章_文件操作.md",
         "date": "2025-01-14",
         "tags": [
           "C语言",
@@ -331,7 +353,7 @@ export const ARCHIVE_DATA: YearArchive[] = [
       },
       {
         "title": "第09章_命令模式",
-        "path": "/content/zhaji/design-patterns/command-patterns/",
+        "path": "/content/biji/design-patterns/command-patterns/",
         "date": "2025-01-14",
         "tags": [
           "设计模式",
@@ -343,7 +365,7 @@ export const ARCHIVE_DATA: YearArchive[] = [
       },
       {
         "title": "第02章_文档搭建",
-        "path": "/content/zhaji/doc-build/assets/",
+        "path": "/content/biji/doc-build/assets/",
         "date": "2025-01-14",
         "tags": [
           "文档搭建"
@@ -354,7 +376,7 @@ export const ARCHIVE_DATA: YearArchive[] = [
       },
       {
         "title": "第02章_配置",
-        "path": "/content/zhaji/doc-build/configuration/",
+        "path": "/content/biji/doc-build/configuration/",
         "date": "2025-01-14",
         "tags": [
           "文档搭建"
@@ -365,7 +387,7 @@ export const ARCHIVE_DATA: YearArchive[] = [
       },
       {
         "title": "第02章_Frontmatter",
-        "path": "/content/zhaji/doc-build/frontmatter/",
+        "path": "/content/biji/doc-build/frontmatter/",
         "date": "2025-01-14",
         "tags": [
           "文档搭建"
@@ -376,7 +398,7 @@ export const ARCHIVE_DATA: YearArchive[] = [
       },
       {
         "title": "快速上手",
-        "path": "/content/zhaji/doc-build/getting-started/",
+        "path": "/content/biji/doc-build/getting-started/",
         "date": "2025-01-14",
         "tags": [
           "文档搭建"
@@ -387,7 +409,7 @@ export const ARCHIVE_DATA: YearArchive[] = [
       },
       {
         "title": "文档搭建之Markdown",
-        "path": "/content/zhaji/doc-build/markdown/",
+        "path": "/content/biji/doc-build/markdown/",
         "date": "2025-01-14",
         "tags": [
           "文档搭建"
@@ -398,7 +420,7 @@ export const ARCHIVE_DATA: YearArchive[] = [
       },
       {
         "title": "文档搭建之页面",
-        "path": "/content/zhaji/doc-build/page/",
+        "path": "/content/biji/doc-build/page/",
         "date": "2025-01-14",
         "tags": [
           "文档搭建"
@@ -409,7 +431,7 @@ export const ARCHIVE_DATA: YearArchive[] = [
       },
       {
         "title": "文档搭建之前言",
-        "path": "/content/zhaji/doc-build/preface/",
+        "path": "/content/biji/doc-build/preface/",
         "date": "2025-01-14",
         "tags": [
           "文档搭建"
@@ -420,7 +442,7 @@ export const ARCHIVE_DATA: YearArchive[] = [
       },
       {
         "title": "文档搭建之团队界面",
-        "path": "/content/zhaji/doc-build/team/",
+        "path": "/content/biji/doc-build/team/",
         "date": "2025-01-14",
         "tags": [
           "文档搭建"
@@ -431,7 +453,7 @@ export const ARCHIVE_DATA: YearArchive[] = [
       },
       {
         "title": "CSS学习笔记",
-        "path": "/content/zhaji/frontend/CSS/",
+        "path": "/content/biji/frontend/CSS/",
         "date": "2025-01-14",
         "tags": [
           "CSS",

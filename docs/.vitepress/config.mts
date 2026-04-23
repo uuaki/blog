@@ -8,6 +8,7 @@ export default defineConfig({
   description: '记录学习笔记，分享技术文章。',
   lastUpdated: true,
   appearance: 'dark',
+  ignoreDeadLinks: true,
   //markdown配置
   markdown: {
     image: {
