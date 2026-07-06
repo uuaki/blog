@@ -24,7 +24,9 @@
   display: block;
   flex-shrink: 0;
   background-size: cover;
+  filter: grayscale(1);
   margin-right: 6px;
+  opacity: 0.72;
 }
 
 #VPSidebarNav .VPSidebarItem:not(.is-link) > .item {
@@ -41,7 +43,9 @@
   display: block;
   flex-shrink: 0;
   background-size: cover;
+  filter: grayscale(1);
   margin-right: 6px;
+  opacity: 0.72;
 }
 
 /* 选中带有 .is-link 的 .VPSidebarItem 的直接子元素 .item */
@@ -59,7 +63,9 @@
   display: block;
   flex-shrink: 0;
   background-size: cover;
+  filter: grayscale(1);
   margin-right: 6px;
+  opacity: 0.72;
 }
 
 /* 确保文本内容能正确换行，不会遮挡图标 */

@@ -112,10 +112,9 @@ const getTagCount = (tag: string) => {
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-bottom: 3rem;
-  padding: 1.5rem;
-  background: var(--vp-c-bg-soft);
-  border-radius: 12px;
-  border: 1px solid var(--vp-c-divider);
+  padding: 0 0 1.5rem;
+  background: var(--vp-c-bg);
+  border-bottom: 1px solid var(--vp-c-divider);
   box-sizing: border-box;
 }
 
@@ -132,15 +131,14 @@ const getTagCount = (tag: string) => {
   box-sizing: border-box;
 
   &:hover {
-    color: var(--vp-c-brand);
-    border-color: var(--vp-c-brand);
-    transform: translateY(-1px);
+    color: var(--vp-c-text-1);
+    border-color: var(--vp-c-border);
   }
 
   &.active {
-    background: var(--vp-c-brand);
+    background: var(--vp-c-text-1);
     color: #fff;
-    border-color: var(--vp-c-brand);
+    border-color: var(--vp-c-text-1);
   }
 }
 
@@ -154,14 +152,15 @@ const getTagCount = (tag: string) => {
   padding: 1.5rem;
   background: var(--vp-c-bg);
   border: 1px solid var(--vp-c-divider);
-  border-radius: 12px;
-  transition: all 0.3s;
+  border-radius: 8px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
   box-sizing: border-box;
 
   &:hover {
-    border-color: var(--vp-c-brand);
-    box-shadow: var(--vp-shadow-2);
-    transform: translateY(-2px);
+    border-color: var(--vp-c-border);
+    box-shadow: var(--vp-shadow-1);
   }
 }
 
@@ -178,8 +177,8 @@ const getTagCount = (tag: string) => {
 }
 
 .article-tag {
-  color: var(--vp-c-brand);
-  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-text-2);
+  background: var(--vp-c-bg-soft);
   padding: 0.2rem 0.6rem;
   border-radius: 4px;
   font-weight: 500;

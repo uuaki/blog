@@ -7,7 +7,7 @@ export default defineConfig({
   title: '橙黄橘绿',
   description: '记录学习笔记，分享技术文章。',
   lastUpdated: true,
-  appearance: 'dark',
+  appearance: true,
   ignoreDeadLinks: true,
   //markdown配置
   markdown: {

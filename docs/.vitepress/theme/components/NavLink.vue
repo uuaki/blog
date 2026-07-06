@@ -81,18 +81,20 @@ const formatBadge = computed(() => {
   --m-nav-box-gap: 12px;
 
   display: block;
-  border: 1px solid var(--vp-c-bg-soft);
-  border-radius: 12px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
   height: 100%;
-  background-color: var(--vp-c-bg-soft);
-  transition: all 0.25s;
+  background-color: var(--vp-c-bg);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
 
   &:hover {
-    box-shadow: var(--vp-shadow-2);
-    //border-color: var(--vp-c-brand);
+    border-color: var(--vp-c-border);
+    box-shadow: var(--vp-shadow-1);
     text-decoration: initial;
-    background-color: var(--vp-c-bg-soft-up);
-    transform: translateY(-5px);
+    background-color: var(--vp-c-bg);
   }
 
   .box {
@@ -118,11 +120,12 @@ const formatBadge = computed(() => {
     justify-content: center;
     align-items: center;
     margin-right: calc(var(--m-nav-box-gap) - 2px);
-    border-radius: 6px;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 8px;
     width: var(--m-nav-icon-box-size);
     height: var(--m-nav-icon-box-size);
     font-size: var(--m-nav-icon-size);
-    background-color: var(--vp-c-bg-soft-down);
+    background-color: var(--vp-c-bg-soft);
     transition: background-color 0.25s;
 
     :deep(svg) {
@@ -142,7 +145,7 @@ const formatBadge = computed(() => {
     white-space: nowrap;
     text-overflow: ellipsis;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
 
     &:not(.no-icon) {
       line-height: var(--m-nav-icon-box-size);
