@@ -83,8 +83,8 @@ const getTagCount = (tag: string) => {
 <style lang="scss" scoped>
 .m-tags-page {
   width: 100%;
-  max-width: 100%;
-  margin: 0;
+  max-width: 1180px;
+  margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
 }
@@ -127,7 +127,8 @@ const getTagCount = (tag: string) => {
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 500;
-  transition: all 0.2s;
+  transition-property: background-color, border-color, color, transform;
+  transition-duration: 150ms;
   box-sizing: border-box;
 
   &:hover {
@@ -136,9 +137,13 @@ const getTagCount = (tag: string) => {
   }
 
   &.active {
-    background: var(--vp-c-text-1);
+    background: var(--vp-c-brand-1);
     color: #fff;
-    border-color: var(--vp-c-text-1);
+    border-color: var(--vp-c-brand-1);
+  }
+
+  &:active {
+    transform: scale(0.96);
   }
 }
 
@@ -150,17 +155,17 @@ const getTagCount = (tag: string) => {
 
 .article-card {
   padding: 1.5rem;
-  background: var(--vp-c-bg);
-  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-soft);
+  border: 0;
   border-radius: 8px;
   transition:
-    border-color 0.2s ease,
+    background-color 0.2s ease,
     box-shadow 0.2s ease;
   box-sizing: border-box;
 
   &:hover {
-    border-color: var(--vp-c-border);
-    box-shadow: var(--vp-shadow-1);
+    background: var(--vp-c-bg);
+    box-shadow: var(--vp-shadow-2);
   }
 }
 

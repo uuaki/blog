@@ -1,6 +1,4 @@
-/* .vitepress/theme/style/sidebarIcon.css */
-
-/* 侧边栏缩放 */
+/* 侧边栏缩进引导线 */
 .group:has([role="button"]) .VPSidebarItem.level-0 .items {
   padding-left: 15px !important;
   border-left: 1px solid var(--vp-c-divider);
@@ -9,13 +7,11 @@
 }
 
 /* 侧边栏图标 */
-/* 选中所有 .VPSidebarItem 元素，排除带有 .is-link 类的 */
 #VPSidebarNav .VPSidebarItem:not(.is-link).collapsed > .item {
   display: flex;
   align-items: center;
 }
 
-/* 为所有不带 .is-link 的 .VPSidebarItem 折叠状态添加图标 */
 #VPSidebarNav .VPSidebarItem:not(.is-link).collapsed > .item::before {
   content: "";
   background-image: url("../../../public/file-close.svg");
@@ -24,7 +20,7 @@
   display: block;
   flex-shrink: 0;
   background-size: cover;
-  filter: grayscale(1);
+  filter: grayscale(1) sepia(0.4) hue-rotate(-25deg);
   margin-right: 6px;
   opacity: 0.72;
 }
@@ -34,7 +30,6 @@
   align-items: center;
 }
 
-/* 为所有不带 .is-link 的 .VPSidebarItem 非折叠状态添加图标 */
 #VPSidebarNav .VPSidebarItem:not(.is-link) > .item::before {
   content: "";
   background-image: url("../../../public/icon_document_open.svg");
@@ -43,18 +38,16 @@
   display: block;
   flex-shrink: 0;
   background-size: cover;
-  filter: grayscale(1);
+  filter: grayscale(1) sepia(0.4) hue-rotate(-25deg);
   margin-right: 6px;
   opacity: 0.72;
 }
 
-/* 选中带有 .is-link 的 .VPSidebarItem 的直接子元素 .item */
 #VPSidebarNav .VPSidebarItem.is-link > .item {
   display: flex;
   align-items: center;
 }
 
-/* 为选中的 .item 添加图标 */
 #VPSidebarNav .VPSidebarItem.is-link > .item::before {
   content: "";
   background-image: url("../../../public/file.svg");
@@ -63,12 +56,16 @@
   display: block;
   flex-shrink: 0;
   background-size: cover;
-  filter: grayscale(1);
+  filter: grayscale(1) sepia(0.4) hue-rotate(-25deg);
   margin-right: 6px;
   opacity: 0.72;
 }
 
-/* 确保文本内容能正确换行，不会遮挡图标 */
+#VPSidebarNav .VPSidebarItem.is-link.is-active > .item::before {
+  filter: grayscale(1) sepia(1) hue-rotate(-25deg) saturate(3);
+  opacity: 1;
+}
+
 #VPSidebarNav .VPSidebarItem .item .text {
   word-break: break-word;
   overflow-wrap: break-word;
@@ -76,10 +73,13 @@
   min-width: 0;
 }
 
-/* 确保链接文本能够正确换行，不会遮挡图标 */
 #VPSidebarNav .VPSidebarItem.is-link .link {
   word-break: break-word;
   overflow-wrap: break-word;
   flex: 1;
   min-width: 0;
+}
+
+.VPSidebarItem .link:hover .text {
+  color: var(--site-brand) !important;
 }

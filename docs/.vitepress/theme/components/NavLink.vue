@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { withBase } from "vitepress";
 import { slugify } from "@mdit-vue/shared";
 
 import { NavLink } from "../utils/types";
@@ -21,11 +20,6 @@ const formatTitle = computed(() => {
   return slugify(props.title);
 });
 
-const svg = computed(() => {
-  if (typeof props.icon === "object") return props.icon.svg;
-  return "";
-});
-
 const formatBadge = computed(() => {
   if (typeof props.badge === "string") {
     return { text: props.badge, type: "info" };
@@ -44,21 +38,10 @@ const formatBadge = computed(() => {
   >
     <article class="box" :class="{ 'has-badge': formatBadge }">
       <div class="box-header">
-        <template v-if="!noIcon">
-          <div v-if="svg" class="icon" v-html="svg"></div>
-          <div v-else-if="icon && typeof icon === 'string'" class="icon">
-            <img
-              :src="withBase(icon)"
-              :alt="title"
-              onerror="this.parentElement.style.display='none'"
-            />
-          </div>
-        </template>
         <h5
           v-if="title"
           :id="formatTitle"
           class="title"
-          :class="{ 'no-icon': noIcon }"
         >
           {{ title }}
         </h5>
@@ -76,23 +59,19 @@ const formatBadge = computed(() => {
 
 <style lang="scss" scoped>
 .m-nav-link {
-  --m-nav-icon-box-size: 50px;
-  --m-nav-icon-size: 45px;
   --m-nav-box-gap: 12px;
 
   display: block;
-  border: 1px solid var(--vp-c-divider);
+  border: 0;
   border-radius: 8px;
   height: 100%;
-  background-color: var(--vp-c-bg);
+  background-color: var(--vp-c-bg-soft);
   transition:
-    border-color 0.2s ease,
     box-shadow 0.2s ease,
     background-color 0.2s ease;
 
   &:hover {
-    border-color: var(--vp-c-border);
-    box-shadow: var(--vp-shadow-1);
+    box-shadow: var(--vp-shadow-2);
     text-decoration: initial;
     background-color: var(--vp-c-bg);
   }
@@ -115,30 +94,6 @@ const formatBadge = computed(() => {
     }
   }
 
-  .icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: calc(var(--m-nav-box-gap) - 2px);
-    border: 1px solid var(--vp-c-divider);
-    border-radius: 8px;
-    width: var(--m-nav-icon-box-size);
-    height: var(--m-nav-icon-box-size);
-    font-size: var(--m-nav-icon-size);
-    background-color: var(--vp-c-bg-soft);
-    transition: background-color 0.25s;
-
-    :deep(svg) {
-      width: var(--m-nav-icon-size);
-      fill: currentColor;
-    }
-
-    :deep(img) {
-      border-radius: 4px;
-      width: var(--m-nav-icon-size);
-    }
-  }
-
   .title {
     overflow: hidden;
     flex-grow: 1;
@@ -147,9 +102,7 @@ const formatBadge = computed(() => {
     font-size: 16px;
     font-weight: 700;
 
-    &:not(.no-icon) {
-      line-height: var(--m-nav-icon-box-size);
-    }
+    line-height: 1.4;
   }
 
   .badge {
@@ -175,8 +128,6 @@ const formatBadge = computed(() => {
 
 @media (max-width: 960px) {
   .m-nav-link {
-    --m-nav-icon-box-size: 36px;
-    --m-nav-icon-size: 20px;
     --m-nav-box-gap: 8px;
 
     .title {

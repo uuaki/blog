@@ -1,95 +1,38 @@
 :root {
-  --vp-c-default-1: var(--vp-c-gray-1);
-  --vp-c-default-2: var(--vp-c-gray-2);
-  --vp-c-default-3: var(--vp-c-gray-3);
-  --vp-c-default-soft: var(--vp-c-gray-soft);
-
-  --vp-c-brand-1: var(--vp-c-indigo-1);
-  --vp-c-brand-2: var(--vp-c-indigo-2);
-  --vp-c-brand-3: var(--vp-c-indigo-3);
-  --vp-c-brand-soft: var(--vp-c-indigo-soft);
-
+  --vp-c-default-1: #1d1d1f;
+  --vp-c-default-2: #6e6e73;
+  --vp-c-default-3: #86868b;
+  --vp-c-default-soft: #f5f5f7;
+  --vp-c-brand-1: #0071e3;
+  --vp-c-brand-2: #0077ed;
+  --vp-c-brand-3: #006edb;
+  --vp-c-brand-soft: rgb(0 113 227 / 10%);
   --vp-c-tip-1: var(--vp-c-brand-1);
   --vp-c-tip-2: var(--vp-c-brand-2);
   --vp-c-tip-3: var(--vp-c-brand-3);
   --vp-c-tip-soft: var(--vp-c-brand-soft);
 
-  --vp-c-warning-1: var(--vp-c-yellow-1);
-  --vp-c-warning-2: var(--vp-c-yellow-2);
-  --vp-c-warning-3: var(--vp-c-yellow-3);
-  --vp-c-warning-soft: var(--vp-c-yellow-soft);
-
-  --vp-c-danger-1: var(--vp-c-red-1);
-  --vp-c-danger-2: var(--vp-c-red-2);
-  --vp-c-danger-3: var(--vp-c-red-3);
-  --vp-c-danger-soft: var(--vp-c-red-soft);
-}
-
-/**
- * Component: Button
- * -------------------------------------------------------------------------- */
-
-:root {
   --vp-button-brand-border: transparent;
-  --vp-button-brand-text: var(--vp-c-white);
-  --vp-button-brand-bg: var(--vp-c-brand-3);
+  --vp-button-brand-text: #ffffff;
+  --vp-button-brand-bg: var(--vp-c-brand-1);
   --vp-button-brand-hover-border: transparent;
-  --vp-button-brand-hover-text: var(--vp-c-white);
+  --vp-button-brand-hover-text: #ffffff;
   --vp-button-brand-hover-bg: var(--vp-c-brand-2);
   --vp-button-brand-active-border: transparent;
-  --vp-button-brand-active-text: var(--vp-c-white);
-  --vp-button-brand-active-bg: var(--vp-c-brand-1);
-}
+  --vp-button-brand-active-text: #ffffff;
+  --vp-button-brand-active-bg: var(--vp-c-brand-3);
 
-/**
- * Component: Home
- * -------------------------------------------------------------------------- */
+  --vp-home-hero-name-color: #1d1d1f;
+  --vp-home-hero-name-background: none;
+  --vp-home-hero-image-background-image: none;
+  --vp-home-hero-image-filter: none;
 
-:root {
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: linear-gradient(
-    120deg,
-    #2a4d8f 20%,
-    #27804a 80%
-  );
-
-  --vp-home-hero-image-background-image: linear-gradient(
-    -45deg,
-    #2a4d8f 50%,
-    #d4a017 50%
-  );
-  --vp-home-hero-image-filter: blur(44px);
-}
-
-@media (min-width: 640px) {
-  :root {
-    --vp-home-hero-image-filter: blur(56px);
-  }
-}
-
-@media (min-width: 960px) {
-  :root {
-    --vp-home-hero-image-filter: blur(68px);
-  }
-}
-
-/**
- * Component: Custom Block
- * -------------------------------------------------------------------------- */
-
-:root {
   --vp-custom-block-tip-border: transparent;
   --vp-custom-block-tip-text: var(--vp-c-text-1);
   --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
-  --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
+  --vp-custom-block-tip-code-bg: rgb(0 113 227 / 8%);
 }
-
-/**
- * Component: Algolia
- * -------------------------------------------------------------------------- */
 
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
-
-/*!*自定义样式，实时生效*!*/

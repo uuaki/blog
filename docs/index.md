@@ -5,9 +5,6 @@ layout: home
 hero:
   name: "  "
   text: "莫负金穗浪·轻步落枫风"
-  image:
-    src: /logo.png
-    alt: VitePress
   tagline: "天地一浮云，此身乃毫末，自勉之"
 
 features:

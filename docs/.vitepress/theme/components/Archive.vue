@@ -38,13 +38,6 @@ const currentYear =
         >
           <div class="article-card-header">
             <span class="article-date">{{ article.date }}</span>
-            <div
-              v-if="article.icon"
-              class="article-icon"
-              :style="{ backgroundColor: article.iconColor }"
-            >
-              <span class="icon-text">{{ article.icon }}</span>
-            </div>
           </div>
 
           <h4 class="article-title">
@@ -67,15 +60,15 @@ const currentYear =
 <style lang="scss" scoped>
 .m-archive-page {
   width: 100%;
-  max-width: 100%;
-  margin: 0;
+  max-width: 1180px;
+  margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
 }
 
 .archive-header {
-  margin-bottom: 3rem;
-  padding: 0 0 1.5rem;
+  margin-bottom: 4rem;
+  padding: 40px 0 32px;
   background: var(--vp-c-bg);
   border-bottom: 1px solid var(--vp-c-divider);
   text-align: left;
@@ -90,15 +83,15 @@ const currentYear =
 }
 
 .header-title {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 650;
   color: var(--vp-c-text-1);
   margin: 0;
 }
 
 .header-subtitle {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--vp-c-text-2);
   margin: 0;
 }
@@ -116,8 +109,8 @@ const currentYear =
 }
 
 .year-title {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.75rem;
+  font-weight: 650;
   color: var(--vp-c-text-1);
   margin: 0;
 }
@@ -130,19 +123,19 @@ const currentYear =
 
 .article-card {
   padding: 1.5rem;
-  background: var(--vp-c-bg);
-  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-soft);
+  border: 0;
   border-radius: 8px;
   transition:
-    border-color 0.2s ease,
+    background-color 0.2s ease,
     box-shadow 0.2s ease;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
 
   &:hover {
-    border-color: var(--vp-c-border);
-    box-shadow: var(--vp-shadow-1);
+    background: var(--vp-c-bg);
+    box-shadow: var(--vp-shadow-2);
   }
 }
 
@@ -157,23 +150,6 @@ const currentYear =
   font-size: 0.875rem;
   color: var(--vp-c-text-3);
   font-weight: 500;
-}
-
-.article-icon {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.icon-text {
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 700;
-  line-height: 1;
 }
 
 .article-title {
@@ -260,15 +236,6 @@ const currentYear =
 
   .article-date {
     font-size: 0.75rem;
-  }
-
-  .article-icon {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  .icon-text {
-    font-size: 0.625rem;
   }
 
   .article-title {
